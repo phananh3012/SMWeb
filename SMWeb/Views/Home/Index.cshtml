@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<main>
+    <section class="row pb-5" aria-labelledby="aspnetTitle">
+        <h1 id="title">Student Management System</h1>
+    </section>
+
+    <div class="row justify-content-around">
+        <section class="col-md-3 border border-secondary rounded p-3">
+            <h2>Danh sách sinh viên</h2>
+            <p>Hiển thị chi tiết thông tin toàn bộ sinh viên</p>
+            <p><a class="btn btn-outline-dark" asp-controller ="Student" asp-action = "Index">Go &raquo;</a></p>
+        </section>
+        <section class="col-md-3 border border-secondary rounded p-3">
+            <h2>Danh sách lớp học</h2>
+            <p>Hiển thị danh sách sinh viên, môn học, bảng điểm sinh viên, nhập điểm sinh viên</p>
+            <p><a class="btn btn-outline-dark" asp-controller="Classroom" asp-action="Index">Go &raquo;</a></p>
+        </section>
+    </div>
+</main>

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Student>
+
+<div class="container">
+	<div class="row pt-4 pb-4">
+		<div class="col-6">
+			<h2 class="text-dark">Danh sách sinh viên</h2>
+		</div>
+		<div class="col-6 text-end">
+			<a asp-controller="Home" asp-action="Index" class="btn btn-dark w-25">Trở về</a>
+		</div>
+	</div>
+	<table class="table table-bordered table-striped" style="width: 100%">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Gender</th>
+				<th>DOB</th>
+				<th>Class</th>
+				<th>Course</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			@foreach(var obj in Model)
+			{
+				<tr>
+					<td>@obj.StudentId</td>
+					<td>@obj.StudentName</td>
+					<td>@obj.Gender</td>
+					<td>@obj.DOB.ToString("dd/mm/yyyy")</td>
+					<td>@obj.Class</td>
+					<td>@obj.Course</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>

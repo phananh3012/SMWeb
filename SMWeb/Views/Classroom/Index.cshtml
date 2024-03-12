@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ClassroomVM>
+
+<div class="container">
+	<div class="row pt-4 pb-4">
+		<div class="col-6">
+			<h2 class="text-dark">Danh sách lớp học</h2>
+		</div>
+		<div class="col-6 text-end">
+			<a asp-controller="Home" asp-action="Index" class="btn btn-dark w-25">Trở về</a>
+		</div>
+	</div>
+	<table class="table table-bordered table-striped" style="width: 100%">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Họ tên</th>
+				<th>Môn học</th>
+				<th>Điểm quá trình</th>
+				<th>Điểm thành phần</th>
+				<th>Điểm tổng kết</th>
+				<th>Kết quả</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var obj in Model)
+			{
+				<tr>
+					<td>@obj.Classroom.ClassroomId</td>
+					<td>@obj.StudentName</td>
+					<td>@obj.SubjectName</td>
+					<td>@obj.Classroom.FirstGrade</td>
+					<td>@obj.Classroom.SecondGrade</td>
+					<td>@obj.Classroom.FinalGrade</td>
+					<td>@obj.Classroom.Result</td>
+
+					<td>
+						<a asp-controller="Classroom" asp-action="Edit" asp-route-id="@obj.Classroom.ClassroomId" class="btn btn-dark mx-2 w-100">
+							 Edit
+						</a>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>

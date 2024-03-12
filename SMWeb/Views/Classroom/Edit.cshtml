@@ -1,0 +1,43 @@
+﻿@model ClassroomVM
+
+<form method="post" enctype="multipart/form-data">
+	<div class="p-3 m-5">
+		<div class="row">
+			<h2 class="text-dark text-center"> Nhập điểm</h2>
+		</div>
+		<input asp-for="Classroom.ClassroomId" hidden />
+		<input asp-for="Classroom.SubjectId" hidden />
+		<div class="row">
+			<div class="col-6 px-4 m-auto">
+					<div class="mb-3 row p-1">
+						<label asp-for="StudentName" class="p-0 "></label>
+						<input asp-for="StudentName" type="text" class="form-control" disabled />
+					</div>
+					<div class="mb-3 row p-1">
+						<label asp-for="SubjectName" class="p-0"></label>
+						<input asp-for="SubjectName" type="text" class="form-control" disabled />
+					</div>
+					<div class="mb-3 row p-1">
+						<label asp-for="Classroom.FirstGrade" class="p-0"></label>
+						<input asp-for="Classroom.FirstGrade" type="text" class="form-control" />
+						<span asp-validation-for="Classroom.FirstGrade" class="text-danger"></span>
+
+					</div>
+					<div class="mb-3 row p-1">
+						<label asp-for="Classroom.SecondGrade" class="p-0"></label>
+						<input asp-for="Classroom.SecondGrade" type="text" class="form-control" />
+						<span asp-validation-for="Classroom.SecondGrade" class="text-danger"></span>
+					</div>
+			</div>
+		</div>
+
+		<div class="row justify-content-center">
+				<div class="col-4 col-md-3 ">
+					<button type="submit" class="btn btn-dark form-control">Cập nhật</button>
+				</div>
+				<div class="col-4 col-md-3 ">
+					<a asp-controller="Classroom" asp-action="Index" class="btn btn-secondary border form-control">Trở về</a>
+				</div>
+		</div>
+	</div>
+</form>
