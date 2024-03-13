@@ -1,42 +1,33 @@
-﻿@model IEnumerable<ClassroomVM>
+﻿@model IEnumerable<Subject>
 
-<div class="container">
-	<div class="row pt-4 pb-4">
-		<div class="col-6">
+<div class="container ">
+	<div class="row pt-4 pb-4 justify-content-center">
+		<div class="col-4">
 			<h2 class="text-dark">Danh sách lớp học</h2>
 		</div>
-		<div class="col-6 text-end">
+		<div class="col-4 text-end">
 			<a asp-controller="Home" asp-action="Index" class="btn btn-dark w-25">Trở về</a>
 		</div>
 	</div>
-	<table class="table table-bordered table-striped" style="width: 100%">
+	<table class="table table-bordered table-striped m-auto" style="width: 70%">
 		<thead>
 			<tr>
-				<th>Id</th>
-				<th>Họ tên</th>
-				<th>Môn học</th>
-				<th>Điểm quá trình</th>
-				<th>Điểm thành phần</th>
-				<th>Điểm tổng kết</th>
-				<th>Kết quả</th>
-
+				<th style="width: 20%">Id</th>
+				<th style="width: 30%"> Lớp học</th>
+				<th style="width: 30%">Số tiết học</th>
+				<th style="width: 20%"></th>
 			</tr>
 		</thead>
 		<tbody>
 			@foreach (var obj in Model)
 			{
 				<tr>
-					<td>@obj.Classroom.ClassroomId</td>
-					<td>@obj.StudentName</td>
+					<td>@obj.SubjectId</td>
 					<td>@obj.SubjectName</td>
-					<td>@obj.Classroom.FirstGrade</td>
-					<td>@obj.Classroom.SecondGrade</td>
-					<td>@obj.Classroom.FinalGrade</td>
-					<td>@obj.Classroom.Result</td>
-
-					<td>
-						<a asp-controller="Classroom" asp-action="Edit" asp-route-id="@obj.Classroom.ClassroomId" class="btn btn-dark mx-2 w-100">
-							 Edit
+					<td>@obj.NumberOfPeriod</td>
+					<td class="text-center">
+						<a asp-controller="Classroom" asp-action="Detail" asp-route-id="@obj.SubjectId" class="btn btn-dark mx-3 w-75">
+							 <i class="bi bi-box-arrow-in-up-right"></i> Chi tiết
 						</a>
 					</td>
 				</tr>

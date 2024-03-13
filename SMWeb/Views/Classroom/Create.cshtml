@@ -1,0 +1,43 @@
+﻿@model Classroom
+
+<form method="post" enctype="multipart/form-data">
+	<div class="p-3 m-5">
+		<div class="row">
+			<h2 class="text-dark text-center"> Nhập sinh viên vào lớp học</h2>
+		</div>
+		<input asp-for="ClassroomId" hidden />
+		<input asp-for="SubjectId" hidden />
+		<div class="row">
+			<div class="col-6 px-4 m-auto">
+				<div class="mb-3 row p-1">
+					<label asp-for="StudentId" class="p-0"></label>
+					<select asp-for="StudentId" asp-items="@ViewBag.StudentList" class="form-select">
+						<option disabled selected>--Chọn Sinh viên--</option>
+					</select>
+					<span asp-validation-for="StudentId" class="text-danger"></span>
+
+				</div>
+				<div class="mb-3 row p-1">
+					<label asp-for="FirstGrade" class="p-0"></label>
+					<input asp-for="FirstGrade" type="text" class="form-control" disabled/>
+					<span asp-validation-for="FirstGrade" class="text-danger"></span>
+
+				</div>
+				<div class="mb-3 row p-1">
+					<label asp-for="SecondGrade" class="p-0"></label>
+					<input asp-for="SecondGrade" type="text" class="form-control" disabled />
+					<span asp-validation-for="SecondGrade" class="text-danger"></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="row justify-content-center">
+			<div class="col-4 col-md-3 ">
+				<button type="submit" class="btn btn-dark form-control">Cập nhật</button>
+			</div>
+			<div class="col-4 col-md-3 ">
+				<a asp-controller="Classroom" asp-action="Detail" asp-route-id="@Model.SubjectId" class="btn btn-secondary border form-control">Trở về</a>
+			</div>
+		</div>
+	</div>
+</form>

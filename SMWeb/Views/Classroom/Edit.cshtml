@@ -14,10 +14,6 @@
 						<input asp-for="StudentName" type="text" class="form-control" disabled />
 					</div>
 					<div class="mb-3 row p-1">
-						<label asp-for="SubjectName" class="p-0"></label>
-						<input asp-for="SubjectName" type="text" class="form-control" disabled />
-					</div>
-					<div class="mb-3 row p-1">
 						<label asp-for="Classroom.FirstGrade" class="p-0"></label>
 						<input asp-for="Classroom.FirstGrade" type="text" class="form-control" />
 						<span asp-validation-for="Classroom.FirstGrade" class="text-danger"></span>
@@ -36,7 +32,7 @@
 					<button type="submit" class="btn btn-dark form-control">Cập nhật</button>
 				</div>
 				<div class="col-4 col-md-3 ">
-					<a asp-controller="Classroom" asp-action="Index" class="btn btn-secondary border form-control">Trở về</a>
+					<a asp-controller="Classroom" asp-action="Detail" asp-route-id="@Model.Classroom.SubjectId" class="btn btn-secondary border form-control">Trở về</a>
 				</div>
 		</div>
 	</div>

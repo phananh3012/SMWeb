@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using SMWeb.Models;
 using SMWeb.Repository;
 using SMWeb.ViewModels;
@@ -19,37 +20,90 @@ namespace SMWeb.Controllers
 		}
 		public IActionResult Index()
 		{
+			var subjectList = _subjectRepo.GetAll();
+			if (subjectList == null)
+			{
+				return NotFound();
+			}
+			return View(subjectList);
+		}
+		public IActionResult Detail(int id)
+		{
 			List<ClassroomVM> classVM = new();
-			var classList = _classroomRepo.GetAll();
+			var classList = _classroomRepo.GetBySubject(id);
+			string subjectName = _subjectRepo.Get(id).SubjectName;
+			if (classList == null || subjectName == null)
+			{
+				return NotFound();
+			}
 			foreach (var classMember in classList)
 			{
 				classVM.Add(new ClassroomVM
 				{
 					StudentName = _studentRepo.Get(classMember.StudentId).StudentName,
-					SubjectName = _subjectRepo.Get(classMember.SubjectId).SubjectName,
 					Classroom = classMember
 				});
 			}
+			ViewBag.SubjectName = subjectName;
+			ViewBag.SubjectId = id;
 			return View(classVM);
+		}
+		public IActionResult Create(int id)
+		{
+			Classroom classroom = new() { SubjectId = id };
+			List<SelectListItem> StudentList = new(_studentRepo.GetAll().Select(u => new SelectListItem
+			{
+				Text = u.StudentName,
+				Value = u.StudentId.ToString()
+			}));
+
+			ViewBag.StudentList = StudentList;
+			return View(classroom);
+		}
+		[HttpPost]
+		public IActionResult Create(Classroom classroom)
+		{
+			if (ModelState.IsValid)
+			{
+				_classroomRepo.Add(classroom);
+				return RedirectToAction("Detail", new { id = classroom.SubjectId });
+			}
+			List<SelectListItem> StudentList = new(_studentRepo.GetAll().Select(u => new SelectListItem
+			{
+				Text = u.StudentName,
+				Value = u.StudentId.ToString()
+			}));
+
+			ViewBag.StudentList = StudentList;
+			return View();
 		}
 		public IActionResult Edit(int id)
 		{
+
 			Classroom classroom = _classroomRepo.Get(id);
 			ClassroomVM classroomVM = new()
 			{
 				Classroom = classroom,
 				StudentName = _studentRepo.Get(classroom.StudentId).StudentName,
-				SubjectName = _subjectRepo.Get(classroom.SubjectId).SubjectName,
 			};
 			return View(classroomVM);
 		}
 		[HttpPost]
 		public IActionResult Edit(ClassroomVM classroomVM)
 		{
-			_classroomRepo.Update(classroomVM.Classroom);
-			Subject subject = _subjectRepo.Get(classroomVM.Classroom.SubjectId);
-			_classroomRepo.UpdateFinalGrade(subject.FirstGradeRate, subject.SecondGradeRate, classroomVM.Classroom.ClassroomId);
-			return RedirectToAction("Index");
+			if (ModelState.IsValid)
+			{
+				_classroomRepo.Update(classroomVM.Classroom);
+				Subject subject = _subjectRepo.Get(classroomVM.Classroom.SubjectId);
+				_classroomRepo.UpdateFinalGrade(subject.FirstGradeRate, subject.SecondGradeRate, classroomVM.Classroom.ClassroomId);
+				return RedirectToAction("Detail", new { id = subject.SubjectId });
+			}
+			return View(classroomVM);
+		}
+		public IActionResult Delete(int id, int subId)
+		{
+			_classroomRepo.Remove(id);
+			return RedirectToAction("Detail", new { id = subId });
 		}
 	}
 }

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Subject>
+
+<div class="container">
+	<div class="row pt-4 pb-4">
+		<div class="col-6">
+			<h2 class="text-dark">Danh sách môn học</h2>
+		</div>
+		<div class="col-6 text-end">
+			<a asp-controller="Subject" asp-action="Create" class="btn btn-dark w-25"><i class="bi bi-plus-circle"></i> Tạo</a>
+			<a asp-controller="Home" asp-action="Index" class="btn btn-dark w-25">Trở về</a>
+		</div>
+	</div>
+	<table class="table table-bordered table-striped" style="width: 100%">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Tên môn học</th>
+				<th>Số tiết học</th>
+				<th>Tỉ lệ điểm QT</th>
+				<th>Tỉ lệ điểm TP</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var obj in Model)
+			{
+				<tr>
+					<td>@obj.SubjectId</td>
+					<td>@obj.SubjectName</td>
+					<td>@obj.NumberOfPeriod</td>
+					<td>@obj.FirstGradeRate</td>
+					<td>@obj.SecondGradeRate</td>
+					<td>
+						<div class="text-center" >
+							<a asp-controller="Subject" asp-action="Edit" asp-route-id="@obj.SubjectId" class="btn btn-dark mx-2 w-25">
+								<i class="bi bi-pencil"></i> Sửa
+							</a>
+							<a asp-controller="Subject" asp-action="Delete" asp-route-id="@obj.SubjectId" class="btn btn-dark mx-2 w-25">
+								<i class="bi bi-trash3"></i> Xóa
+							</a>
+						</div>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
