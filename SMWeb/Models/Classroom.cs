@@ -19,6 +19,11 @@ namespace SMWeb.Models
 		public double SecondGrade { get; set; }
 		[Range(0, 10)]
 		public double FinalGrade { get; set; }
-		public string? Result { get; set; }
+		public enum Result
+
+		{
+			Pass = 1,
+			Fail = 0
+		}
 	}
 }

@@ -1,0 +1,35 @@
+﻿@model Student
+
+<div class="row">
+	<div class="col-6 px-4 m-auto">
+		<div class="mb-3 row p-1">
+			<label asp-for="StudentName" class="p-0 "></label>
+			<input asp-for="StudentName" type="text" pattern="[A-Za-z]{1, 40}" class="form-control" />
+			<span asp-validation-for="StudentName" class="text-danger"></span>
+		</div>
+		<div class="mb-3 row p-1">
+			<label asp-for="Gender" class="p-0"></label>
+			<select asp-for="Gender" asp-items="@ViewBag.GenderList" class="form-select">
+				<option disabled selected>--Chọn giới tính--</option>
+			</select>
+			<span asp-validation-for="Gender" class="text-danger"></span>
+
+		</div>
+		<div class="mb-3 row p-1">
+			<label asp-for="DOB" class="p-0">Ngày sinh</label>
+			<input asp-for="DOB" type="date" class="form-control" />
+			<span asp-validation-for="DOB" class="text-danger"></span>
+
+		</div>
+		<div class="mb-3 row p-1">
+			<label asp-for="Class" class="p-0"></label>
+			<input asp-for="Class" type="text" class="form-control" />
+			<span asp-validation-for="Class" class="text-danger"></span>
+		</div>
+		<div class="mb-3 row p-1">
+			<label asp-for="Course" class="p-0"></label>
+			<input asp-for="Course" type="number" class="form-control" />
+			<span asp-validation-for="Course" class="text-danger"></span>
+		</div>
+	</div>
+</div>

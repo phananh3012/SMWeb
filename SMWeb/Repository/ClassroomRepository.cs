@@ -13,12 +13,6 @@ namespace SMWeb.Repository
 			_dapperContext = dapperContext;
 		}
 
-		public IEnumerable<Classroom> GetAll()
-		{
-			var query = "SELECT * FROM Classroom";
-			using var connection = _dapperContext.CreateConnection();
-			return connection.Query<Classroom>(query).ToList();
-		}
 		public Classroom Get(int id)
 		{
 			var query = "SELECT * FROM Classroom WHERE ClassroomId = @ClassroomId";
@@ -34,25 +28,16 @@ namespace SMWeb.Repository
 
 		public void Update(Classroom classroom)
 		{
-			var query = "UPDATE Classroom SET FirstGrade = @FirstGrade, SecondGrade = @SecondGrade WHERE ClassroomId = @ClassroomId";
+			var query = "UPDATE Classroom SET FirstGrade = @FirstGrade, SecondGrade = @SecondGrade, FinalGrade = @FinalGrade WHERE ClassroomId = @ClassroomId";
 			using var connection = _dapperContext.CreateConnection();
-			connection.Execute(query, new { classroom.FirstGrade, classroom.SecondGrade, classroom.ClassroomId });
-		}
-
-		public void UpdateFinalGrade(double firstGradeRate, double secondGradeRate, int ClassroomId)
-		{
-			string updateQuery = "UPDATE Classroom SET FinalGrade = FirstGrade * @firstGradeRate + SecondGrade * @secondGradeRate where ClassroomId = @ClassroomId";
-			string updateQuery1 = "UPDATE Classroom SET Result = CASE WHEN FinalGrade > = 4 THEN 'Do' WHEN FinalGrade < 4 THEN 'Truot' ELSE null END";
-			using var connection = _dapperContext.CreateConnection();
-			connection.Execute(updateQuery, new { firstGradeRate, secondGradeRate, ClassroomId });
-			connection.Execute(updateQuery1);
+			connection.Execute(query, new { classroom.FirstGrade, classroom.SecondGrade, classroom.FinalGrade, classroom.ClassroomId });
 		}
 
 		public void Add(Classroom classroom)
 		{
-			string query = "INSERT INTO Classroom VALUES(@StudentId, @SubjectId, @FirstGrade, @SecondGrade, @FinalGrade, @Result)";
+			string query = "INSERT INTO Classroom VALUES(@StudentId, @SubjectId, @FirstGrade, @SecondGrade, @FinalGrade)";
 			using var connection = _dapperContext.CreateConnection();
-			connection.Execute(query, new { classroom.StudentId, classroom.SubjectId, classroom.FirstGrade, classroom.SecondGrade, classroom.FinalGrade, classroom.Result });
+			connection.Execute(query, new { classroom.StudentId, classroom.SubjectId, classroom.FirstGrade, classroom.SecondGrade, classroom.FinalGrade });
 		}
 
 		public void Remove(int ClassroomId)

@@ -1,20 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SMWeb.Models;
-using SMWeb.Repository;
+using SMWeb.Service;
 
 namespace SMWeb.Controllers
 {
 	public class StudentController : Controller
 	{
-		private readonly IStudentRepository _studentRepo;
-		public StudentController(IStudentRepository studentRepo)
+		private readonly IStudentService _studentService;
+		public StudentController(IStudentService studentService)
 		{
-			_studentRepo = studentRepo;
+			_studentService = studentService;
 		}
 		public IActionResult Index()
 		{
-			var studentList = _studentRepo.GetAll();
+			var studentList = _studentService.GetAll();
 			if (studentList == null)
 			{
 				return NotFound();
@@ -27,7 +27,7 @@ namespace SMWeb.Controllers
 			{
 				new SelectListItem() { Text = "Nam", Value = "1" },
 				new SelectListItem() { Text = "Nữ", Value = "2" },
-				new SelectListItem() { Text = "Khác", Value = "0" }
+				new SelectListItem() { Text = "Khác", Value = "3" }
 			};
 			ViewBag.GenderList = GenderList;
 			return View();
@@ -37,21 +37,21 @@ namespace SMWeb.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				_studentRepo.Add(student);
+				_studentService.Add(student);
 				return RedirectToAction("Index");
 			}
 			List<SelectListItem> GenderList = new()
 			{
 				new SelectListItem() { Text = "Nam", Value = "1" },
 				new SelectListItem() { Text = "Nữ", Value = "2" },
-				new SelectListItem() { Text = "Khác", Value = "0" }
+				new SelectListItem() { Text = "Khác", Value = "3" }
 			};
 			ViewBag.GenderList = GenderList;
 			return View();
 		}
 		public IActionResult Edit(int id)
 		{
-			Student student = _studentRepo.Get(id);
+			Student student = _studentService.Get(id);
 			if (student == null)
 			{
 				return NotFound();
@@ -60,7 +60,7 @@ namespace SMWeb.Controllers
 			{
 				new SelectListItem() { Text = "Nam", Value = "1" },
 				new SelectListItem() { Text = "Nữ", Value = "2" },
-				new SelectListItem() { Text = "Khác", Value = "0" }
+				new SelectListItem() { Text = "Khác", Value = "3" }
 			};
 			ViewBag.GenderList = GenderList;
 			return View(student);
@@ -70,21 +70,21 @@ namespace SMWeb.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				_studentRepo.Update(student);
+				_studentService.Update(student);
 				return RedirectToAction("Index");
 			}
 			List<SelectListItem> GenderList = new()
 			{
 				new SelectListItem() { Text = "Nam", Value = "1" },
 				new SelectListItem() { Text = "Nữ", Value = "2" },
-				new SelectListItem() { Text = "Khác", Value = "0" }
+				new SelectListItem() { Text = "Khác", Value = "3" }
 			};
 			ViewBag.GenderList = GenderList;
 			return View(student);
 		}
 		public IActionResult Delete(int id)
 		{
-			_studentRepo.Remove(id);
+			_studentService.Remove(id);
 			return RedirectToAction("Index");
 		}
 	}

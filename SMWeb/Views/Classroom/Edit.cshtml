@@ -7,6 +7,7 @@
 		</div>
 		<input asp-for="Classroom.ClassroomId" hidden />
 		<input asp-for="Classroom.SubjectId" hidden />
+		<input asp-for="Classroom.StudentId" hidden />
 		<div class="row">
 			<div class="col-6 px-4 m-auto">
 					<div class="mb-3 row p-1">
@@ -15,13 +16,13 @@
 					</div>
 					<div class="mb-3 row p-1">
 						<label asp-for="Classroom.FirstGrade" class="p-0"></label>
-						<input asp-for="Classroom.FirstGrade" type="text" class="form-control" />
+					<input asp-for="Classroom.FirstGrade" type="text" pattern="^\d*(\.\d{0,2})?$" class="form-control" />
 						<span asp-validation-for="Classroom.FirstGrade" class="text-danger"></span>
 
 					</div>
 					<div class="mb-3 row p-1">
 						<label asp-for="Classroom.SecondGrade" class="p-0"></label>
-						<input asp-for="Classroom.SecondGrade" type="text" class="form-control" />
+					<input asp-for="Classroom.SecondGrade" type="text" pattern="^\d*(\.\d{0,2})?$" class="form-control" />
 						<span asp-validation-for="Classroom.SecondGrade" class="text-danger"></span>
 					</div>
 			</div>

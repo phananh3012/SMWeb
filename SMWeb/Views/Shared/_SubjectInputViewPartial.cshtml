@@ -1,0 +1,29 @@
+﻿@model Subject
+
+<div class="row">
+	<div class="col-6 px-4 m-auto">
+		<div class="mb-3 row p-1">
+			<label asp-for="SubjectName" class="p-0 "></label>
+			<input asp-for="SubjectName" type="text" pattern="[A-Za-z]{1, 20}" class="form-control" />
+			<span asp-validation-for="SubjectName" class="text-danger"></span>
+		</div>
+		<div class="mb-3 row p-1">
+			<label asp-for="NumberOfPeriod" class="p-0"></label>
+			<input asp-for="NumberOfPeriod" type="number" class="form-control" />
+			<span asp-validation-for="NumberOfPeriod" class="text-danger"></span>
+
+		</div>
+		@Html.ValidationMessage("Ratio", new { @class = "text-danger"})
+		<div class="mb-3 row p-1">
+			<label asp-for="FirstGradeRate" class="p-0"></label>
+			<input asp-for="FirstGradeRate" type="text" pattern = "^\d*(\.\d{0,2})?$" class="form-control" />
+			<span asp-validation-for="FirstGradeRate" class="text-danger"></span>
+
+		</div>
+		<div class="mb-3 row p-1">
+			<label asp-for="SecondGradeRate" class="p-0"></label>
+			<input asp-for="SecondGradeRate" type="text" pattern="^\d*(\.\d{0,2})?$" class="form-control" />
+			<span asp-validation-for="SecondGradeRate" class="text-danger"></span>
+		</div>
+	</div>
+</div>

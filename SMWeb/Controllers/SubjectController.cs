@@ -1,19 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SMWeb.Models;
-using SMWeb.Repository;
+using SMWeb.Service;
 
 namespace SMWeb.Controllers
 {
 	public class SubjectController : Controller
 	{
-		private readonly ISubjectRepository _subjectRepository;
-		public SubjectController(ISubjectRepository subjectRepository)
+		private readonly ISubjectService _subjectService;
+		public SubjectController(ISubjectService subjectService)
 		{
-			_subjectRepository = subjectRepository;
+			_subjectService = subjectService;
 		}
 		public IActionResult Index()
 		{
-			var subjectList = _subjectRepository.GetAll();
+			var subjectList = _subjectService.GetAll();
 			if (subjectList == null)
 			{
 				return NotFound();
@@ -27,9 +27,13 @@ namespace SMWeb.Controllers
 		[HttpPost]
 		public IActionResult Create(Subject subject)
 		{
+			if (subject.FirstGradeRate + subject.SecondGradeRate != 1)
+			{
+				ModelState.AddModelError("Ratio", "Tỉ lệ điểm không đúng");
+			}
 			if (ModelState.IsValid)
 			{
-				_subjectRepository.Add(subject);
+				_subjectService.Add(subject);
 				return RedirectToAction("Index");
 			}
 
@@ -37,7 +41,7 @@ namespace SMWeb.Controllers
 		}
 		public IActionResult Edit(int id)
 		{
-			Subject subject = _subjectRepository.Get(id);
+			Subject subject = _subjectService.Get(id);
 			if (subject == null)
 			{
 				return NotFound();
@@ -47,16 +51,20 @@ namespace SMWeb.Controllers
 		[HttpPost]
 		public IActionResult Edit(Subject subject)
 		{
+			if (subject.FirstGradeRate + subject.SecondGradeRate != 1)
+			{
+				ModelState.AddModelError("Ratio", "Tỉ lệ điểm không đúng");
+			}
 			if (ModelState.IsValid)
 			{
-				_subjectRepository.Update(subject);
+				_subjectService.Update(subject);
 				return RedirectToAction("Index");
 			}
 			return View(subject);
 		}
 		public IActionResult Delete(int id)
 		{
-			_subjectRepository.Remove(id);
+			_subjectService.Remove(id);
 			return RedirectToAction("Index");
 		}
 

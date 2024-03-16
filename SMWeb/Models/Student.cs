@@ -8,19 +8,18 @@ namespace SMWeb.Models
 		[Key]
 		public int StudentId { get; set; }
 		[DisplayName("Họ và tên")]
-		[Required]
-		public string? StudentName { get; set; }
-		[Required]
-		[Range(0, 2)]
+		[Required(ErrorMessage = "Nhập họ và tên")]
+		public string StudentName { get; set; }
+		[Range(1, 3, ErrorMessage = "Chọn giới tính")]
 		[DisplayName("Giới tính")]
 		public int Gender { get; set; }
-		[Required]
+		[Required(ErrorMessage = "Nhập ngày sinh")]
 		[DisplayName("Ngày sinh")]
 		public DateTime DOB { get; set; }
-		[Required]
+		[Required(ErrorMessage = "Nhập tên lớp")]
 		[DisplayName("Lớp")]
-		public string? Class { get; set; }
-		[Required]
+		public string Class { get; set; }
+		[Required(ErrorMessage = "Nhập khóa")]
 		[DisplayName("Khóa")]
 		public int Course { get; set; }
 	}

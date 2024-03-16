@@ -6,7 +6,7 @@
 			<h2 class="text-dark">Danh sách sinh viên</h2>
 		</div>
 		<div class="col-6 text-end">
-			<a asp-controller="Student" asp-action="Create" class="btn btn-dark w-25"><i class="bi bi-plus-circle"></i> Tạo</a>
+			<a asp-controller="Student" asp-action="Create" class="btn btn-success w-25"><i class="bi bi-plus-circle"></i> Tạo</a>
 			<a asp-controller="Home" asp-action="Index" class="btn btn-dark w-25">Trở về</a>
 		</div>
 	</div>
@@ -28,16 +28,16 @@
 				<tr>
 					<td>@obj.StudentId</td>
 					<td>@obj.StudentName</td>
-					<td>@(obj.Gender == 1?"Nam":"Nữ")</td>
+					<td>@(obj.Gender == 1?"Nam":obj.Gender==2?"Nữ":"Khác")</td>
 					<td>@obj.DOB.ToString("dd/MM/yyyy")</td>
 					<td>@obj.Class</td>
 					<td>@obj.Course</td>
 					<td>
 						<div class="text-center">
-							<a asp-controller="Student" asp-action="Edit" asp-route-id="@obj.StudentId" class="btn btn-dark mx-2 w-25">
+							<a asp-controller="Student" asp-action="Edit" asp-route-id="@obj.StudentId" class="btn btn-warning mx-2 w-25">
 								<i class="bi bi-pencil"></i> Sửa
 							</a>
-							<a asp-controller="Student" asp-action="Delete" asp-route-id="@obj.StudentId" class="btn btn-dark mx-2 w-25">
+							<a asp-controller="Student" asp-action="Delete" asp-route-id="@obj.StudentId" class="btn btn-danger mx-2 w-25">
 								<i class="bi bi-trash3"></i> Xóa
 							</a>
 						</div>

@@ -11,7 +11,18 @@ namespace SMWeb.Repository
 		{
 			_dapperContext = dapperContext;
 		}
-
+		public IEnumerable<Subject> GetAll()
+		{
+			string query = "SELECT * FROM Subject";
+			using var connection = _dapperContext.CreateConnection();
+			return connection.Query<Subject>(query).ToList();
+		}
+		public Subject Get(int id)
+		{
+			string query = "SELECT * FROM Subject WHERE SubjectId = @SubjectId";
+			using var connection = _dapperContext.CreateConnection();
+			return connection.QueryFirstOrDefault<Subject>(query, new { SubjectId = id });
+		}
 		public void Add(Subject subject)
 		{
 			string query = "INSERT INTO Subject VALUES(@SubjectName, @NumberOfPeriod, @FirstGradeRate, @SecondGradeRate)";
@@ -19,18 +30,6 @@ namespace SMWeb.Repository
 			connection.Execute(query, new { subject.SubjectName, subject.NumberOfPeriod, subject.FirstGradeRate, subject.SecondGradeRate });
 		}
 
-		public Subject Get(int id)
-		{
-			string query = "SELECT * FROM Subject WHERE SubjectId = @SubjectId";
-			using var connection = _dapperContext.CreateConnection();
-			return connection.QueryFirstOrDefault<Subject>(query, new { SubjectId = id });
-		}
-		public IEnumerable<Subject> GetAll()
-		{
-			string query = "SELECT * FROM Subject";
-			using var connection = _dapperContext.CreateConnection();
-			return connection.Query<Subject>(query).ToList();
-		}
 		public void Update(Subject subject)
 		{
 			string query = "UPDATE Subject SET SubjectName = @SubjectName, NumberOfPeriod = @NumberOfPeriod, FirstGradeRate = @FirstGradeRate, SecondGradeRate = @SecondGradeRate WHERE SubjectId = @SubjectId";

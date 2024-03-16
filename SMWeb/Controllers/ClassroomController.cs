@@ -1,26 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SMWeb.Models;
-using SMWeb.Repository;
+using SMWeb.Service;
 using SMWeb.ViewModels;
 
 namespace SMWeb.Controllers
 {
 	public class ClassroomController : Controller
 	{
-		private readonly IClassroomRepository _classroomRepo;
-		private readonly ISubjectRepository _subjectRepo;
-		private readonly IStudentRepository _studentRepo;
-
-		public ClassroomController(IClassroomRepository classroomRepo, ISubjectRepository subjectRepo, IStudentRepository studentRepo)
+		private readonly IClassroomService _classroomService;
+		public ClassroomController(IClassroomService classroomService)
 		{
-			_classroomRepo = classroomRepo;
-			_subjectRepo = subjectRepo;
-			_studentRepo = studentRepo;
+			_classroomService = classroomService;
 		}
 		public IActionResult Index()
 		{
-			var subjectList = _subjectRepo.GetAll();
+			var subjectList = _classroomService.GetSubjects();
 			if (subjectList == null)
 			{
 				return NotFound();
@@ -30,8 +25,8 @@ namespace SMWeb.Controllers
 		public IActionResult Detail(int id)
 		{
 			List<ClassroomVM> classVM = new();
-			var classList = _classroomRepo.GetBySubject(id);
-			string subjectName = _subjectRepo.Get(id).SubjectName;
+			var classList = _classroomService.GetBySubject(id);
+			string subjectName = _classroomService.GetSubjectName(id);
 			if (classList == null || subjectName == null)
 			{
 				return NotFound();
@@ -40,7 +35,7 @@ namespace SMWeb.Controllers
 			{
 				classVM.Add(new ClassroomVM
 				{
-					StudentName = _studentRepo.Get(classMember.StudentId).StudentName,
+					StudentName = _classroomService.GetStudentName(classMember.StudentId),
 					Classroom = classMember
 				});
 			}
@@ -51,7 +46,7 @@ namespace SMWeb.Controllers
 		public IActionResult Create(int id)
 		{
 			Classroom classroom = new() { SubjectId = id };
-			List<SelectListItem> StudentList = new(_studentRepo.GetAll().Select(u => new SelectListItem
+			List<SelectListItem> StudentList = new(_classroomService.GetStudents().Select(u => new SelectListItem
 			{
 				Text = u.StudentName,
 				Value = u.StudentId.ToString()
@@ -65,10 +60,10 @@ namespace SMWeb.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				_classroomRepo.Add(classroom);
+				_classroomService.Add(classroom);
 				return RedirectToAction("Detail", new { id = classroom.SubjectId });
 			}
-			List<SelectListItem> StudentList = new(_studentRepo.GetAll().Select(u => new SelectListItem
+			List<SelectListItem> StudentList = new(_classroomService.GetStudents().Select(u => new SelectListItem
 			{
 				Text = u.StudentName,
 				Value = u.StudentId.ToString()
@@ -80,11 +75,11 @@ namespace SMWeb.Controllers
 		public IActionResult Edit(int id)
 		{
 
-			Classroom classroom = _classroomRepo.Get(id);
+			Classroom classroom = _classroomService.GetClassroom(id);
 			ClassroomVM classroomVM = new()
 			{
 				Classroom = classroom,
-				StudentName = _studentRepo.Get(classroom.StudentId).StudentName,
+				StudentName = _classroomService.GetStudentName(classroom.StudentId),
 			};
 			return View(classroomVM);
 		}
@@ -93,17 +88,16 @@ namespace SMWeb.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				_classroomRepo.Update(classroomVM.Classroom);
-				Subject subject = _subjectRepo.Get(classroomVM.Classroom.SubjectId);
-				_classroomRepo.UpdateFinalGrade(subject.FirstGradeRate, subject.SecondGradeRate, classroomVM.Classroom.ClassroomId);
-				return RedirectToAction("Detail", new { id = subject.SubjectId });
+				_classroomService.Update(classroomVM.Classroom);
+				_classroomService.UpdateFinalGrade(classroomVM.Classroom);
+				return RedirectToAction("Detail", new { id = classroomVM.Classroom.SubjectId });
 			}
 			return View(classroomVM);
 		}
-		public IActionResult Delete(int id, int subId)
+		public IActionResult Delete(int id, int subjectId)
 		{
-			_classroomRepo.Remove(id);
-			return RedirectToAction("Detail", new { id = subId });
+			_classroomService.Remove(id);
+			return RedirectToAction("Detail", new { id = subjectId });
 		}
 	}
 }
