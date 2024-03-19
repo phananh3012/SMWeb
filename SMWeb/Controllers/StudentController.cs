@@ -8,10 +8,12 @@ namespace SMWeb.Controllers
 	public class StudentController : Controller
 	{
 		private readonly IStudentService _studentService;
+
 		public StudentController(IStudentService studentService)
 		{
 			_studentService = studentService;
 		}
+
 		public IActionResult Index()
 		{
 			var studentList = _studentService.GetAll();
@@ -21,6 +23,7 @@ namespace SMWeb.Controllers
 			}
 			return View(studentList);
 		}
+
 		public IActionResult Create()
 		{
 			List<SelectListItem> GenderList = new()
@@ -32,6 +35,7 @@ namespace SMWeb.Controllers
 			ViewBag.GenderList = GenderList;
 			return View();
 		}
+
 		[HttpPost]
 		public IActionResult Create(Student student)
 		{
@@ -49,6 +53,7 @@ namespace SMWeb.Controllers
 			ViewBag.GenderList = GenderList;
 			return View();
 		}
+
 		public IActionResult Edit(int id)
 		{
 			Student student = _studentService.Get(id);
@@ -65,6 +70,7 @@ namespace SMWeb.Controllers
 			ViewBag.GenderList = GenderList;
 			return View(student);
 		}
+
 		[HttpPost]
 		public IActionResult Edit(Student student)
 		{
@@ -82,6 +88,7 @@ namespace SMWeb.Controllers
 			ViewBag.GenderList = GenderList;
 			return View(student);
 		}
+
 		public IActionResult Delete(int id)
 		{
 			_studentService.Remove(id);

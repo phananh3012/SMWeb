@@ -10,6 +10,5 @@ namespace SMWeb.Repository
 		void Add(Student student);
 		void Update(Student student);
 		void Remove(int id);
-
 	}
 }

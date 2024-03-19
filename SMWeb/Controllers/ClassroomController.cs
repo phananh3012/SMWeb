@@ -9,10 +9,12 @@ namespace SMWeb.Controllers
 	public class ClassroomController : Controller
 	{
 		private readonly IClassroomService _classroomService;
+
 		public ClassroomController(IClassroomService classroomService)
 		{
 			_classroomService = classroomService;
 		}
+
 		public IActionResult Index()
 		{
 			var subjectList = _classroomService.GetSubjects();
@@ -22,6 +24,7 @@ namespace SMWeb.Controllers
 			}
 			return View(subjectList);
 		}
+
 		public IActionResult Detail(int id)
 		{
 			List<ClassroomVM> classVM = new();
@@ -43,6 +46,7 @@ namespace SMWeb.Controllers
 			ViewBag.SubjectId = id;
 			return View(classVM);
 		}
+
 		public IActionResult Create(int id)
 		{
 			Classroom classroom = new() { SubjectId = id };
@@ -55,6 +59,7 @@ namespace SMWeb.Controllers
 			ViewBag.StudentList = StudentList;
 			return View(classroom);
 		}
+
 		[HttpPost]
 		public IActionResult Create(Classroom classroom)
 		{
@@ -72,9 +77,9 @@ namespace SMWeb.Controllers
 			ViewBag.StudentList = StudentList;
 			return View();
 		}
+
 		public IActionResult Edit(int id)
 		{
-
 			Classroom classroom = _classroomService.GetClassroom(id);
 			ClassroomVM classroomVM = new()
 			{
@@ -83,6 +88,7 @@ namespace SMWeb.Controllers
 			};
 			return View(classroomVM);
 		}
+
 		[HttpPost]
 		public IActionResult Edit(ClassroomVM classroomVM)
 		{
@@ -94,6 +100,7 @@ namespace SMWeb.Controllers
 			}
 			return View(classroomVM);
 		}
+
 		public IActionResult Delete(int id, int subjectId)
 		{
 			_classroomService.Remove(id);

@@ -7,10 +7,12 @@ namespace SMWeb.Controllers
 	public class SubjectController : Controller
 	{
 		private readonly ISubjectService _subjectService;
+
 		public SubjectController(ISubjectService subjectService)
 		{
 			_subjectService = subjectService;
 		}
+
 		public IActionResult Index()
 		{
 			var subjectList = _subjectService.GetAll();
@@ -20,10 +22,12 @@ namespace SMWeb.Controllers
 			}
 			return View(subjectList);
 		}
+
 		public IActionResult Create()
 		{
 			return View();
 		}
+
 		[HttpPost]
 		public IActionResult Create(Subject subject)
 		{
@@ -39,6 +43,7 @@ namespace SMWeb.Controllers
 
 			return View();
 		}
+
 		public IActionResult Edit(int id)
 		{
 			Subject subject = _subjectService.Get(id);
@@ -48,6 +53,7 @@ namespace SMWeb.Controllers
 			}
 			return View(subject);
 		}
+
 		[HttpPost]
 		public IActionResult Edit(Subject subject)
 		{
@@ -62,6 +68,7 @@ namespace SMWeb.Controllers
 			}
 			return View(subject);
 		}
+
 		public IActionResult Delete(int id)
 		{
 			_subjectService.Remove(id);

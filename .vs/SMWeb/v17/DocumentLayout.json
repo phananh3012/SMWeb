@@ -1,0 +1,296 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\SDS\\SMWeb\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|d:\\sds\\smweb\\smweb\\controllers\\subjectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|solutionrelative:smweb\\controllers\\subjectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|d:\\sds\\smweb\\smweb\\views\\subject\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|solutionrelative:smweb\\views\\subject\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|d:\\sds\\smweb\\smweb\\views\\subject\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|solutionrelative:smweb\\views\\subject\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|d:\\sds\\smweb\\smweb\\views\\subject\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|solutionrelative:smweb\\views\\subject\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|d:\\sds\\smweb\\smweb\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|solutionrelative:smweb\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|d:\\sds\\smweb\\smweb\\views\\student\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|solutionrelative:smweb\\views\\student\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|d:\\sds\\smweb\\smweb\\views\\student\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|solutionrelative:smweb\\views\\student\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|d:\\sds\\smweb\\smweb\\views\\classroom\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|solutionrelative:smweb\\views\\classroom\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|d:\\sds\\smweb\\smweb\\views\\classroom\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|solutionrelative:smweb\\views\\classroom\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|d:\\sds\\smweb\\smweb\\views\\classroom\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|solutionrelative:smweb\\views\\classroom\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|d:\\sds\\smweb\\smweb\\views\\classroom\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|solutionrelative:smweb\\views\\classroom\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|d:\\sds\\smweb\\smweb\\service\\subjectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|solutionrelative:smweb\\service\\subjectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|d:\\sds\\smweb\\smweb\\models\\classroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|solutionrelative:smweb\\models\\classroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|d:\\sds\\smweb\\smweb\\models\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|solutionrelative:smweb\\models\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|d:\\sds\\smweb\\smweb\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|solutionrelative:smweb\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|d:\\sds\\smweb\\smweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE436DE0-84BF-4372-BCCE-559813FECE67}|SMWeb\\SMWeb.csproj|solutionrelative:smweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 327,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SubjectController.cs",
+              "DocumentMoniker": "D:\\SDS\\SMWeb\\SMWeb\\Controllers\\SubjectController.cs",
+              "RelativeDocumentMoniker": "SMWeb\\Controllers\\SubjectController.cs",
+              "ToolTip": "D:\\SDS\\SMWeb\\SMWeb\\Controllers\\SubjectController.cs",
+              "RelativeToolTip": "SMWeb\\Controllers\\SubjectController.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAmwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-19T03:04:00.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\SDS\\SMWeb\\SMWeb\\Views\\Subject\\Index.cshtml",
+              "RelativeDocumentMoniker": "SMWeb\\Views\\Subject\\Index.cshtml",
+              "ToolTip": "D:\\SDS\\SMWeb\\SMWeb\\Views\\Subject\\Index.cshtml",
+              "RelativeToolTip": "SMWeb\\Views\\Subject\\Index.cshtml",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-19T02:56:28.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\SDS\\SMWeb\\SMWeb\\Views\\Subject\\Edit.cshtml",
+              "RelativeDocumentMoniker": "SMWeb\\Views\\Subject\\Edit.cshtml",
+              "ToolTip": "D:\\SDS\\SMWeb\\SMWeb\\Views\\Subject\\Edit.cshtml",
+              "RelativeToolTip": "SMWeb\\Views\\Subject\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-19T02:56:23.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\SDS\\SMWeb\\SMWeb\\Views\\Subject\\Create.cshtml",
+              "RelativeDocumentMoniker": "SMWeb\\Views\\Subject\\Create.cshtml",
+              "ToolTip": "D:\\SDS\\SMWeb\\SMWeb\\Views\\Subject\\Create.cshtml",
+              "RelativeToolTip": "SMWeb\\Views\\Subject\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-19T02:56:19.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\SDS\\SMWeb\\SMWeb\\Views\\Student\\Index.cshtml",
+              "RelativeDocumentMoniker": "SMWeb\\Views\\Student\\Index.cshtml",
+              "ToolTip": "D:\\SDS\\SMWeb\\SMWeb\\Views\\Student\\Index.cshtml",
+              "RelativeToolTip": "SMWeb\\Views\\Student\\Index.cshtml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-19T02:56:08.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\SDS\\SMWeb\\SMWeb\\Views\\Student\\Edit.cshtml",
+              "RelativeDocumentMoniker": "SMWeb\\Views\\Student\\Edit.cshtml",
+              "ToolTip": "D:\\SDS\\SMWeb\\SMWeb\\Views\\Student\\Edit.cshtml",
+              "RelativeToolTip": "SMWeb\\Views\\Student\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-19T02:56:03.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\SDS\\SMWeb\\SMWeb\\Views\\Student\\Create.cshtml",
+              "RelativeDocumentMoniker": "SMWeb\\Views\\Student\\Create.cshtml",
+              "ToolTip": "D:\\SDS\\SMWeb\\SMWeb\\Views\\Student\\Create.cshtml",
+              "RelativeToolTip": "SMWeb\\Views\\Student\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-19T02:55:33.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\SDS\\SMWeb\\SMWeb\\Views\\Classroom\\Index.cshtml",
+              "RelativeDocumentMoniker": "SMWeb\\Views\\Classroom\\Index.cshtml",
+              "ToolTip": "D:\\SDS\\SMWeb\\SMWeb\\Views\\Classroom\\Index.cshtml",
+              "RelativeToolTip": "SMWeb\\Views\\Classroom\\Index.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-19T02:55:21.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\SDS\\SMWeb\\SMWeb\\Views\\Classroom\\Edit.cshtml",
+              "RelativeDocumentMoniker": "SMWeb\\Views\\Classroom\\Edit.cshtml",
+              "ToolTip": "D:\\SDS\\SMWeb\\SMWeb\\Views\\Classroom\\Edit.cshtml",
+              "RelativeToolTip": "SMWeb\\Views\\Classroom\\Edit.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-19T02:55:00.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "D:\\SDS\\SMWeb\\SMWeb\\Views\\Classroom\\Detail.cshtml",
+              "RelativeDocumentMoniker": "SMWeb\\Views\\Classroom\\Detail.cshtml",
+              "ToolTip": "D:\\SDS\\SMWeb\\SMWeb\\Views\\Classroom\\Detail.cshtml",
+              "RelativeToolTip": "SMWeb\\Views\\Classroom\\Detail.cshtml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-19T02:50:24.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\SDS\\SMWeb\\SMWeb\\Views\\Classroom\\Create.cshtml",
+              "RelativeDocumentMoniker": "SMWeb\\Views\\Classroom\\Create.cshtml",
+              "ToolTip": "D:\\SDS\\SMWeb\\SMWeb\\Views\\Classroom\\Create.cshtml",
+              "RelativeToolTip": "SMWeb\\Views\\Classroom\\Create.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABcAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-19T02:49:43.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SubjectService.cs",
+              "DocumentMoniker": "D:\\SDS\\SMWeb\\SMWeb\\Service\\SubjectService.cs",
+              "RelativeDocumentMoniker": "SMWeb\\Service\\SubjectService.cs",
+              "ToolTip": "D:\\SDS\\SMWeb\\SMWeb\\Service\\SubjectService.cs",
+              "RelativeToolTip": "SMWeb\\Service\\SubjectService.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAgwA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-19T02:49:01.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Classroom.cs",
+              "DocumentMoniker": "D:\\SDS\\SMWeb\\SMWeb\\Models\\Classroom.cs",
+              "RelativeDocumentMoniker": "SMWeb\\Models\\Classroom.cs",
+              "ToolTip": "D:\\SDS\\SMWeb\\SMWeb\\Models\\Classroom.cs",
+              "RelativeToolTip": "SMWeb\\Models\\Classroom.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-19T02:24:04.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Subject.cs",
+              "DocumentMoniker": "D:\\SDS\\SMWeb\\SMWeb\\Models\\Subject.cs",
+              "RelativeDocumentMoniker": "SMWeb\\Models\\Subject.cs",
+              "ToolTip": "D:\\SDS\\SMWeb\\SMWeb\\Models\\Subject.cs",
+              "RelativeToolTip": "SMWeb\\Models\\Subject.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-19T02:22:27.09Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Student.cs",
+              "DocumentMoniker": "D:\\SDS\\SMWeb\\SMWeb\\Models\\Student.cs",
+              "RelativeDocumentMoniker": "SMWeb\\Models\\Student.cs",
+              "ToolTip": "D:\\SDS\\SMWeb\\SMWeb\\Models\\Student.cs",
+              "RelativeToolTip": "SMWeb\\Models\\Student.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-19T02:18:01.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\SDS\\SMWeb\\SMWeb\\Program.cs",
+              "RelativeDocumentMoniker": "SMWeb\\Program.cs",
+              "ToolTip": "D:\\SDS\\SMWeb\\SMWeb\\Program.cs",
+              "RelativeToolTip": "SMWeb\\Program.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAB4AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-19T01:25:11.817Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
