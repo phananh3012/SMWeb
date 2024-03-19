@@ -1,11 +1,12 @@
 ﻿using Dapper;
 using SMWeb.Data;
 using SMWeb.Models;
+using SMWeb.Repository.IRepository;
 using System.Data;
 
 namespace SMWeb.Repository
 {
-	public class SubjectRepository : ISubjectRepository
+    public class SubjectRepository : ISubjectRepository
 	{
 		private readonly DapperContext _dapperContext;
 		private readonly IDbConnection _connection;

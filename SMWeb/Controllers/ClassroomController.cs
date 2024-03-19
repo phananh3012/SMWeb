@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SMWeb.Models;
-using SMWeb.Service;
+using SMWeb.Service.IService;
 using SMWeb.ViewModels;
 
 namespace SMWeb.Controllers
 {
-	public class ClassroomController : Controller
+    public class ClassroomController : Controller
 	{
 		private readonly IClassroomService _classroomService;
 

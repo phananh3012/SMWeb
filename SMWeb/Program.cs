@@ -1,6 +1,8 @@
 using SMWeb.Data;
 using SMWeb.Repository;
+using SMWeb.Repository.IRepository;
 using SMWeb.Service;
+using SMWeb.Service.IService;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,9 +1,10 @@
 ﻿using SMWeb.Models;
-using SMWeb.Repository;
+using SMWeb.Repository.IRepository;
+using SMWeb.Service.IService;
 
 namespace SMWeb.Service
 {
-	public class ClassroomService : IClassroomService
+    public class ClassroomService : IClassroomService
 	{
 		private readonly IClassroomRepository _classroomRepository;
 		private readonly ISubjectRepository _subjectRepository;

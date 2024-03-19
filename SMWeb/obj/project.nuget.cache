@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "NSjvbS+LQgpmz/XxGP3fy54+fYRfedk/FDF5J88tyJxgEM7gXL+/Uw7vqvAKazrdXhFueie3GI6k//jIGY+aEQ==",
+  "dgSpecHash": "BwLBcxmiRLGvmpGPeID6twK1gJdy/ZqVtcAKLa19HE7iZ5NFA7vZ4B8RddPscIbrz37jpCUGOH3jY04l8DFXjw==",
   "success": true,
   "projectFilePath": "D:\\SDS\\SMWeb\\SMWeb\\SMWeb.csproj",
   "expectedPackageFiles": [
@@ -100,11 +100,7 @@
     "C:\\Users\\F87\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\F87\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\F87\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\F87\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\F87\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.17\\microsoft.windowsdesktop.app.ref.7.0.17.nupkg.sha512",
-    "C:\\Users\\F87\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.17\\microsoft.netcore.app.ref.7.0.17.nupkg.sha512",
-    "C:\\Users\\F87\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.17\\microsoft.aspnetcore.app.ref.7.0.17.nupkg.sha512",
-    "C:\\Users\\F87\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.17\\microsoft.netcore.app.host.win-x64.7.0.17.nupkg.sha512"
+    "C:\\Users\\F87\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SMWeb.Models;
-using SMWeb.Service;
+using SMWeb.Service.IService;
 
 namespace SMWeb.Controllers
 {
-	public class SubjectController : Controller
+    public class SubjectController : Controller
 	{
 		private readonly ISubjectService _subjectService;
 
