@@ -27,13 +27,13 @@ namespace SMWeb.Controllers
 
 		public IActionResult Detail(int id)
 		{
-			List<ClassroomVM> classVM = new();
 			var classList = _classroomService.GetBySubject(id);
 			string subjectName = _classroomService.GetSubjectName(id);
 			if (classList == null || subjectName == null)
 			{
 				return NotFound();
 			}
+			List<ClassroomVM> classVM = new();
 			foreach (var classMember in classList)
 			{
 				classVM.Add(new ClassroomVM
@@ -50,12 +50,7 @@ namespace SMWeb.Controllers
 		public IActionResult Create(int id)
 		{
 			Classroom classroom = new() { SubjectId = id };
-			List<SelectListItem> StudentList = new(_classroomService.GetStudents().Select(u => new SelectListItem
-			{
-				Text = u.StudentName,
-				Value = u.StudentId.ToString()
-			}));
-
+			List<SelectListItem> StudentList = _classroomService.StudentListItem();
 			ViewBag.StudentList = StudentList;
 			return View(classroom);
 		}
@@ -68,12 +63,7 @@ namespace SMWeb.Controllers
 				_classroomService.Add(classroom);
 				return RedirectToAction("Detail", new { id = classroom.SubjectId });
 			}
-			List<SelectListItem> StudentList = new(_classroomService.GetStudents().Select(u => new SelectListItem
-			{
-				Text = u.StudentName,
-				Value = u.StudentId.ToString()
-			}));
-
+			List<SelectListItem> StudentList = _classroomService.StudentListItem();
 			ViewBag.StudentList = StudentList;
 			return View();
 		}

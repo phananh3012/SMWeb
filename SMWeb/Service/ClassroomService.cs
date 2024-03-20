@@ -1,4 +1,5 @@
-﻿using SMWeb.Models;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using SMWeb.Models;
 using SMWeb.Repository.IRepository;
 using SMWeb.Service.IService;
 
@@ -24,8 +25,6 @@ namespace SMWeb.Service
 
 		public IEnumerable<Subject> GetSubjects() => _subjectRepository.GetAll();
 
-		public IEnumerable<Student> GetStudents() => _studentRepository.GetAll();
-
 		public string GetSubjectName(int id) => _subjectRepository.Get(id).SubjectName;
 
 		public string GetStudentName(int id) => _studentRepository.Get(id).StudentName;
@@ -42,5 +41,15 @@ namespace SMWeb.Service
 		public void Add(Classroom classroom) => _classroomRepository.Add(classroom);
 
 		public void Remove(int id) => _classroomRepository.Remove(id);
+
+		public List<SelectListItem> StudentListItem()
+		{
+			List<SelectListItem> studentListItem = new(_studentRepository.GetAll().Select(u => new SelectListItem
+			{
+				Text = u.StudentName,
+				Value = u.StudentId.ToString()
+			}));
+			return studentListItem;
+		}
 	}
 }

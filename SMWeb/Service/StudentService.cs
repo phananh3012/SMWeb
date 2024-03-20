@@ -1,4 +1,5 @@
-﻿using SMWeb.Models;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using SMWeb.Models;
 using SMWeb.Repository.IRepository;
 using SMWeb.Service.IService;
 
@@ -18,5 +19,15 @@ namespace SMWeb.Service
 		public void Add(Student student) => _studentRepository.Add(student);
 		public void Update(Student student) => _studentRepository.Update(student);
 		public void Remove(int id) => _studentRepository.Remove(id);
+		public List<SelectListItem> GenderListItem()
+		{
+			List<SelectListItem> genderListItem = new()
+			{
+				new SelectListItem() { Text = "Nam", Value = "1" },
+				new SelectListItem() { Text = "Nữ", Value = "2" },
+				new SelectListItem() { Text = "Khác", Value = "3" }
+			};
+			return genderListItem;
+		}
 	}
 }

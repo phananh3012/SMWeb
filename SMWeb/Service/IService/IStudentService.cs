@@ -1,4 +1,5 @@
-﻿using SMWeb.Models;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using SMWeb.Models;
 
 namespace SMWeb.Service.IService
 {
@@ -9,5 +10,6 @@ namespace SMWeb.Service.IService
         void Add(Student student);
         void Update(Student student);
         void Remove(int id);
+        List<SelectListItem> GenderListItem();
     }
 }

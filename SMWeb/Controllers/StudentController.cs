@@ -26,13 +26,8 @@ namespace SMWeb.Controllers
 
 		public IActionResult Create()
 		{
-			List<SelectListItem> GenderList = new()
-			{
-				new SelectListItem() { Text = "Nam", Value = "1" },
-				new SelectListItem() { Text = "Nữ", Value = "2" },
-				new SelectListItem() { Text = "Khác", Value = "3" }
-			};
-			ViewBag.GenderList = GenderList;
+			List<SelectListItem> GenderListItem = _studentService.GenderListItem();
+			ViewBag.GenderList = GenderListItem;
 			return View();
 		}
 
@@ -44,13 +39,8 @@ namespace SMWeb.Controllers
 				_studentService.Add(student);
 				return RedirectToAction("Index");
 			}
-			List<SelectListItem> GenderList = new()
-			{
-				new SelectListItem() { Text = "Nam", Value = "1" },
-				new SelectListItem() { Text = "Nữ", Value = "2" },
-				new SelectListItem() { Text = "Khác", Value = "3" }
-			};
-			ViewBag.GenderList = GenderList;
+			List<SelectListItem> GenderListItem = _studentService.GenderListItem();
+			ViewBag.GenderList = GenderListItem;
 			return View();
 		}
 
@@ -61,13 +51,8 @@ namespace SMWeb.Controllers
 			{
 				return NotFound();
 			}
-			List<SelectListItem> GenderList = new()
-			{
-				new SelectListItem() { Text = "Nam", Value = "1" },
-				new SelectListItem() { Text = "Nữ", Value = "2" },
-				new SelectListItem() { Text = "Khác", Value = "3" }
-			};
-			ViewBag.GenderList = GenderList;
+			List<SelectListItem> GenderListItem = _studentService.GenderListItem();
+			ViewBag.GenderList = GenderListItem;
 			return View(student);
 		}
 
@@ -79,13 +64,8 @@ namespace SMWeb.Controllers
 				_studentService.Update(student);
 				return RedirectToAction("Index");
 			}
-			List<SelectListItem> GenderList = new()
-			{
-				new SelectListItem() { Text = "Nam", Value = "1" },
-				new SelectListItem() { Text = "Nữ", Value = "2" },
-				new SelectListItem() { Text = "Khác", Value = "3" }
-			};
-			ViewBag.GenderList = GenderList;
+			List<SelectListItem> GenderListItem = _studentService.GenderListItem();
+			ViewBag.GenderList = GenderListItem;
 			return View(student);
 		}
 
